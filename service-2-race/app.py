@@ -4,10 +4,10 @@ import random
 app = Flask(__name__)
 
 # Generate Charecters race
-@app.route('/')
+@app.route('/get_race', methods=['POST'])
 def get_race():
     return random.choice(["Human", "Elf", "Orc"])
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(port=5001, debug=True)
