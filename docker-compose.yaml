@@ -1,0 +1,64 @@
+version: "3.8"
+services:  
+  server:
+    image: samuel240210/server:latest 
+    build: ./service-1-server
+    container_name: server
+    ports:
+    - published: 5000
+      target: 5000
+      protocol: tcp
+    # volumes: 
+    # - type: volume 
+    #   source: dbvol # names the volume 
+    #   target: /var/lib/service-1-server
+    # replicas: 2
+    environment:
+      DATABASE_URI: ${DATABASE_URI}
+      MYSQL_DATABASE: db
+  race_api:
+    image: samuel240210/race_api:latest
+    build: ./service-2-race
+    container_name: race_api
+    ports:
+    - published: 5001
+      target: 5001
+      protocol: tcp
+    # volumes: 
+    # - type: bind
+    #   source:
+    #   target:
+    # replicas: 2
+    depends_on:
+    - 'server'
+  class_api:
+    image: samuel240210/class_api:latest
+    build: ./service-3-class
+    container_name: class_api
+    ports:
+    - published: 5002
+      target: 5002
+      protocol: tcp
+    # volumes: 
+    # - type: bind
+    #   source:
+    #   target:
+    # relicas: 2
+    depends_on:
+    - 'server'
+  stats_api:
+    image: samuel240210/stats_api:latest
+    build: ./service-4-stats
+    container_name: stats_api
+    ports: 
+    - published: 5003
+      target: 5003
+      protocol: tcp
+    # volumes: 
+    # - type: bind
+    #   source:
+    #   target:
+    # relicas: 2
+    depends_on:
+    - 'server'
+    
