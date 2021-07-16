@@ -1,0 +1,36 @@
+<html>
+    <header>
+        <title>
+            DnD Character Generator.
+        </title>
+    </header>
+    <body>
+        <h1>
+            Character Generator 
+        </h1>
+        <p>
+            Character Race: {{ race }}
+        </p>
+        <p>
+            Character Class: {{ character_class }}
+        </p>    
+        <p>
+            Character Blessing: {{ blessing }}
+        </p>    
+        <p>
+            Character Stats: {{ stats }}
+        </p>   
+        <p>
+            Character Points: {{ points }} 
+        </p>
+        <h2>
+            last 5 Characters 
+        </h2>
+        <p>
+            {% for Character in last_five_characters %}
+            Character: {{ character.race }}  |  {{ character.character_class }}  |  {{ character.blessing }}  |  {{ character.stats }}  |  {{ character.points }} 
+            <br>
+            {% endfor %}
+        </p>
+    </body>
+</html>
