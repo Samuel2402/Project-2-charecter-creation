@@ -9,19 +9,28 @@
             Character Generator 
         </h1>
         <p>
-            Charecter Race: {{ race }}
+            Character Race: {{ race }}
         </p>
         <p>
-            Charecter Class: {{ class }}
+            Character Class: {{ character_class }}
         </p>    
         <p>
-            Charecter Blessing: {{ blessing }}
+            Character Blessing: {{ blessing }}
         </p>    
         <p>
-            Charecter Stats: {{ stats }}
+            Character Stats: {{ stats }}
         </p>   
         <p>
-            Charecter Points: {{ points }} 
+            Character Points: {{ points }} 
+        </p>
+        <h2>
+            last 5 Characters 
+        </h2>
+        <p>
+            {% for Character in last_five_characters %}
+            Character: {{ character.race }}  |  {{ character.character_class }}  |  {{ character.blessing }}  |  {{ character.stats }}  |  {{ character.points }} 
+            <br>
+            {% endfor %}
         </p>
     </body>
 </html>

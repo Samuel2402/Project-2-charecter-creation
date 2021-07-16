@@ -1,14 +1,19 @@
-from service-1-server.app import db
-from service-1-server.models import Character
+print('= import-for-create ==============================================')
+
+from app import db
+from flask import Flask
+from app import Character
 
 db.drop_all()
 db.create_all()
+
+print('= add-characters-to-db ==============================================')
 
 # adding sample characters to db
 character1 = Character(
     race="Human",
     character_class="Warrior",
-    blessing='Recieve the blessing of Ares - God of war: +2 Attack',
+    blessing='Recieve the blessing of Ares: +2 Attack',
     stats=("Attack: " + "5") + ("Intelligence:" + "3") + ("Dexterity:" + "3"),
     points=5
     )
@@ -16,7 +21,7 @@ character1 = Character(
 character2 = Character(
     race="Elf",
     character_class="Mage",
-    blessing='Recieve the blessing of Athena - God of wisdom: +2 Intellect',
+    blessing='Recieve the blessing of Athena: +2 Intellect',
     stats=("Attack: " + "3") + ("Intelligence:" + "5") + ("Dexterity:" + "3"),
     points=6
     )
@@ -24,7 +29,7 @@ character2 = Character(
 character3 = Character(
     race="Orc",
     character_class="Ranger",
-    blessing='Recieve the blessing of Artemis - God of the hunt: +2 Dexterity',
+    blessing='Recieve the blessing of Artemis: +2 Dexterity',
     stats=("Attack: " + "3") + ("Intelligence:" + "3") + ("Dexterity:" + "5"), 
     points=4
     )
@@ -38,3 +43,5 @@ for i in character_list:
 for i in character_list:
     db.session.add(i)
 db.session.commit()
+
+print('= added-characters-to-db ==============================================')
