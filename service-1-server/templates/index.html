@@ -27,8 +27,8 @@
             last 5 Characters 
         </h2>
         <p>
-            {% for Character in last_five_characters %}
-            Character: {{ character.race }}  |  {{ character.character_class }}  |  {{ character.blessing }}  |  {{ character.stats }}  |  {{ character.points }} 
+            {% for character in last_five_characters %}
+            Character == Race: {{ character.race }}  |  Class:  {{ character.character_class }}  |  Blessing:  {{ character.blessing }}  |  Stats:  {{ character.stats }}  |  Points:  {{ character.points }} 
             <br>
             {% endfor %}
         </p>

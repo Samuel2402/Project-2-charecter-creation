@@ -8,11 +8,8 @@ services:
     - published: 5000
       target: 5000
       protocol: tcp
-    # volumes: 
-    # - type: volume 
-    #   source: dbvol # names the volume 
-    #   target: /var/lib/service-1-server
-    # replicas: 2
+    deploy:
+      replicas: 2
     environment:
       DATABASE_URI: ${DATABASE_URI}
       MYSQL_DATABASE: db
@@ -24,11 +21,8 @@ services:
     - published: 5001
       target: 5001
       protocol: tcp
-    # volumes: 
-    # - type: bind
-    #   source:
-    #   target:
-    # replicas: 2
+    deploy:
+      replicas: 2
     depends_on:
     - 'server'
   class_api:
@@ -39,11 +33,8 @@ services:
     - published: 5002
       target: 5002
       protocol: tcp
-    # volumes: 
-    # - type: bind
-    #   source:
-    #   target:
-    # relicas: 2
+    deploy:
+      replicas: 2
     depends_on:
     - 'server'
   stats_api:
@@ -54,11 +45,8 @@ services:
     - published: 5003
       target: 5003
       protocol: tcp
-    # volumes: 
-    # - type: bind
-    #   source:
-    #   target:
-    # relicas: 2
+    deploy:
+      replicas: 2
     depends_on:
     - 'server'
     
