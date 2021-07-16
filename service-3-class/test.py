@@ -10,8 +10,13 @@ class TestBase(TestCase):
 
 class Testhome(TestBase):
     def test_race_api(self): 
-        for _ in range(20):
+        for _ in range(10):
             response = self.client.get(url_for('get_class'))
             self.assertIn(response.data.decode('utf-8'), ["Warrior", "Mage", "Ranger"])
 
-    
+    def test_race_api(self):
+        with patch('random.choice') as choice:
+            for _ in range(10):
+                response = self.client.get(url_for('get_class'))
+                self.assertEqual(response.status_code, 200)
+                self.assertIn(response.data.decode('utf-8'), ["Warrior", "Mage", "Ranger"])

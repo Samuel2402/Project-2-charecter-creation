@@ -23,15 +23,8 @@ class Testhome(TestBase):
             self.assertIn(b'Character Blessing: Recieve the blessing of Ares: +2 base Attack', response.data)
             self.assertIn(b"Attack:   6   |   Intelligence:  4   |   Dexterity: + 4", response.data)
             self.assertIn(b"6", response.data)
-    
-    def test_race_api(self):
-        with patch('random.choice') as choice:
-            for _ in range(20):
-                response = self.client.get(url_for('get_class'))
-                self.assertEqual(response.status_code, 200)
-                self.assertIn(response.data.decode('utf-8'), ["Warrior", "Mage", "Ranger"])
             
-    def test_read_home(self):
-        response = self.client.get(url_for('home'))
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Character Generator', response.data)
+    # def test_read_home(self):
+    #     response = self.client.get(url_for('home'))
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertIn(b'Character Generator', response.data)

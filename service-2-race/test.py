@@ -12,6 +12,6 @@ class Testhome(TestBase):
     def test_race_api(self): 
         for _ in range(20):
             response = self.client.get(url_for('get_race'))
-            self.assertIn(response.data.decode('utf-8'), ["Human", "Mage", "Ranger"])
+            self.assertIn(response.data.decode('utf-8'), ["Human", "Elf", "Orc"])
 
     
