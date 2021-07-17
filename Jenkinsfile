@@ -7,7 +7,7 @@ pipeline{
             stage('Build'){
                 steps{
                     sh "export 'DATABASE_URI'=${DATABASE_URI}"
-                    sh "docker pull server:latest" 
+                    sh "docker pull samuel240210/stats_api" 
                     sh "docker pull race_api:latest"
                     sh "docker pull class_api:latest"
                     sh "docker pull stats_api:latest"
