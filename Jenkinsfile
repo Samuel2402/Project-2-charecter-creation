@@ -21,10 +21,10 @@ pipeline{
             }
             stage('Test'){
                 steps{
-                    sh ". ./venv/bin/activate && cd service-1-server && pytest"
-                    sh ". ./venv/bin/activate && cd service-2-race && pytest"
-                    sh ". ./venv/bin/activate && cd service-3-class && pytest"
-                    sh ". ./venv/bin/activate && cd service-4-stats && pytest"
+                    sh ". ./venv/bin/activate && cd service-1-server && python -m pytest test.py"
+                    sh ". ./venv/bin/activate && cd service-2-race && python -m pytest test.py"
+                    sh ". ./venv/bin/activate && cd service-3-class && python -m pytest test.py"
+                    sh ". ./venv/bin/activate && cd service-4-stats && python -m pytest test.py"
                 }
             }
             stage('Deploy'){
