@@ -15,7 +15,7 @@ pipeline{
                     sh "sudo apt install python3-venv -y"
                     sh "python3 -m venv venv" 
                     sh ". ./venv/bin/activate"
-                    sh "pip install pytest"
+                    sh "pip3 install pytest"
                     sh "pip3 install -r requirements.txt"
                 }
             }
