@@ -1,1 +1,9 @@
-Flask
+flask
+SQLAlchemy
+flask_sqlalchemy
+requests
+flask-sqlalchemy 
+sqlalchemy 
+pymysql
+pytest
+pytest-cov

@@ -37,7 +37,7 @@ def home():
     stats = requests.post('http://stats_api:5003/get_stats', data=character_class.text)
     points = requests.get('http://stats_api:5003/get_points')
     
-    last_five_characters = Character.query.all()
+    last_five_characters = Character.query.order_by(Character.id.desc()).limit(10).all()
     db.session.add(
         Character(
             race=race.text,
@@ -49,7 +49,7 @@ def home():
     )
     db.session.commit()
     
-    return render_template('index.html', race=race.text, character_class=character_class.text, blessing=blessing.text, stats=stats.text, points=points.text)
+    return render_template('index.html', race=race.text, character_class=character_class.text, blessing=blessing.text, stats=stats.text, points=points.text, last_five_characters=last_five_characters)
 
 print('= home ==============================================')
 
