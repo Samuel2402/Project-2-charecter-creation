@@ -1,8 +1,7 @@
 pipeline{
         agent any
         environment {
-            DB_PASSWORD = credentials("DB_URI")
-            A = 'mysql+pymysql://root:Test240210@34.68.32.88:3306/db'
+            DB_URI = credentials("DB_URI")
         }
         stages{
             stage('Build'){
