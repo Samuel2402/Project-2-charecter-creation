@@ -7,7 +7,7 @@ pipeline{
             stage('Build'){
                 steps{
                     sh "sudo docker-compose up -d --build"
-                    sh "export DB_URI" 
+                    sh "export DB_PASSWORD" 
                 }
             }
             stage('Test'){
