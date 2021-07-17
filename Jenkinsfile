@@ -6,7 +6,7 @@ pipeline{
         stages{
             stage('Build'){
                 steps{
-                    sh "export 'DATABASE_URI'=DB_PASSWORD"
+                    sh "export 'DATABASE_URI'='mysql+pymysql://root:Test240210@34.68.32.88:3306/db'"
                     sh "docker-compose build"    
                 }
             }
