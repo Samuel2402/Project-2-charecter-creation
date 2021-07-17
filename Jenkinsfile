@@ -6,8 +6,6 @@ pipeline{
         stages{
             stage('Build'){
                 steps{
-                    sh "curl https://get.docker.com | sudo bash"
-                    sh "echo Downloaded Docker"
                     sh "docker-compose build"
                     sh "export DB_PASSWORD" 
                 }
