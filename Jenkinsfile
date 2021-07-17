@@ -11,7 +11,7 @@ pipeline{
                     sh "docker pull samuel240210/race_api:latest"
                     sh "docker pull samuel240210/class_api:latest"
                     sh "docker pull samuel240210/stats_api:latest"
-                    sh "sudo apt-get install python3-pip -y"
+                    sh "sudo apt install python3-pip3"
                     sh "pip install -r requirements.txt"
                 }
             }
