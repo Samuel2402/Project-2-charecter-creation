@@ -8,9 +8,9 @@ pipeline{
                 steps{
                     sh "export 'DATABASE_URI'=${DATABASE_URI}"
                     sh "docker pull samuel240210/stats_api" 
-                    sh "docker pull race_api:latest"
-                    sh "docker pull class_api:latest"
-                    sh "docker pull stats_api:latest"
+                    sh "docker pull samuel240210/race_api:latest"
+                    sh "docker pull samuel240210/class_api:latest"
+                    sh "docker pull samuel240210/stats_api:latest"
                 }
             }
             stage('Test'){
