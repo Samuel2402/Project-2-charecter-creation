@@ -2,10 +2,12 @@ pipeline{
         agent any
         environment {
             DB_PASSWORD = credentials("DB_URI")
+            A = 'mysql+pymysql://root:Test240210@34.68.32.88:3306/db'
         }
         stages{
             stage('Build'){
                 steps{
+                    sh "export DATABASE_URI=A"
                     sh "docker-compose build"    
                 }
             }
