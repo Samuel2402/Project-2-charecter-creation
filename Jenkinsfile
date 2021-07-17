@@ -11,6 +11,8 @@ pipeline{
                     sh "docker pull samuel240210/race_api:latest"
                     sh "docker pull samuel240210/class_api:latest"
                     sh "docker pull samuel240210/stats_api:latest"
+                    sh "sudo apt-get install python3-pip"
+                    sh "pip3 install -r requirements.txt"
                 }
             }
             stage('Test'){
