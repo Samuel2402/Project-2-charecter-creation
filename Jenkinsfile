@@ -1,12 +1,12 @@
 pipeline{
         agent any
         environment {
-            DB_URI = credentials("DB_URI")
+            DATABASE_URI = credentials("DATABASE_URI")
         }
         stages{
             stage('Build'){
                 steps{
-                    sh "export 'DATABASE_URI'=DB_URI"
+                    sh "export 'DATABASE_URI'=DATABASE_URI"
                     sh "docker-compose build"    
                 }
             }
