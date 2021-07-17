@@ -6,7 +6,7 @@ pipeline{
         stages{
             stage('Build'){
                 steps{
-                    sh "sudo docker-compose up -d --build"
+                    sh "sudo docker-compose up"
                     sh "export DB_PASSWORD" 
                 }
             }
@@ -18,7 +18,7 @@ pipeline{
                     sh "cd service-4-stats && pytest test.py"
                 }
             }
-            stage('Deploying'){
+            stage('Deploy'){
                 steps{
                     sh "sudo docker stack services stack-1"
                 }
