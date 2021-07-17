@@ -12,15 +12,18 @@ pipeline{
                     sh "docker pull samuel240210/class_api:latest"
                     sh "docker pull samuel240210/stats_api:latest"
                     sh "sudo apt install python3-pip"
+                    sh "sudo apt install python3-venv"
+                    sh "python3 -m venv venv" 
+                    sh "source venv/bin/activate"
                     sh "pip3 install -r requirements.txt"
                 }
             }
             stage('Test'){
                 steps{
-                    sh "source venv/bin/activate && cd service-1-server && pytest test.py"
-                    sh "cd Project-2-charecter-creation && source venv/bin/activate && cd service-2-race && pytest test.py"
-                    sh "cd Project-2-charecter-creation && source venv/bin/activate && cd service-3-class && pytest test.py"
-                    sh "cd Project-2-charecter-creation && source venv/bin/activate && cd service-4-stats && pytest test.py"
+                    sh "cd service-1-server && pytest test.py"
+                    sh "cd service-2-race && pytest test.py"
+                    sh "cd service-3-class && pytest test.py"
+                    sh "cd service-4-stats && pytest test.py"
                 }
             }
             stage('Deploy'){
