@@ -6,7 +6,7 @@ pipeline{
         stages{
             stage('Build'){
                 steps{
-                    sh "export 'DATABASE_URI'=DATABASE_URI"
+                    sh "export 'DATABASE_URI'=${DATABASE_URI}"
                     sh "docker-compose build"    
                 }
             }
