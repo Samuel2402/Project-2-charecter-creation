@@ -7,10 +7,6 @@ pipeline{
             stage('Build'){
                 steps{
                     sh "export 'DATABASE_URI'=${DATABASE_URI}"
-                    sh "docker pull samuel240210/stats_api" 
-                    sh "docker pull samuel240210/race_api:latest"
-                    sh "docker pull samuel240210/class_api:latest"
-                    sh "docker pull samuel240210/stats_api:latest"
                     sh "sudo apt install python3-pip"
                     sh "sudo apt install python3-venv -y"
                     sh "python3 -m venv venv" 
