@@ -1,24 +1,31 @@
 pipeline{
         agent any
         environment {
-            DB_PASSWORD = credential("DB_URI")
+            DATABASE_URI = credentials("DATABASE_URI")
         }
         stages{
             stage('Build'){
                 steps{
-                    sh "sudo docker-compose up -d --build"
-                    sh "export DB_URI" 
+                    sh "export 'DATABASE_URI'=${DATABASE_URI}"
+                    sh "docker pull samuel240210/stats_api" 
+                    sh "docker pull samuel240210/race_api:latest"
+                    sh "docker pull samuel240210/class_api:latest"
+                    sh "docker pull samuel240210/stats_api:latest"
+                    sh "sudo apt install python3-pip"
+                    sh "sudo apt install python3-venv -y"
+                    sh "python3 -m venv venv" 
+                    sh ". ./venv/bin/activate && pip3 install -r requirements.txt && pytest --version"
                 }
             }
             stage('Test'){
                 steps{
-                    sh "cd service-1-server && pytest test.py"
-                    sh "cd service-2-race && pytest test.py"
-                    sh "cd service-3-class && pytest test.py"
-                    sh "cd service-4-stats && pytest test.py"
+                    sh "cd service-1-server && python3 -m pytest test.py"
+                    sh ". ./venv/bin/activate && cd service-2-race && python -m pytest test.py"
+                    sh ". ./venv/bin/activate && cd service-3-class && python -m pytest test.py"
+                    sh ". ./venv/bin/activate && cd service-4-stats && python -m pytest test.py"
                 }
             }
-            stage('Deploying'){
+            stage('Deploy'){
                 steps{
                     sh "sudo docker stack services stack-1"
                 }
