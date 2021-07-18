@@ -7,4 +7,4 @@ sqlalchemy
 pymysql
 pytest
 pytest-cov
-flask-testing
+
