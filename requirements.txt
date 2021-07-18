@@ -7,4 +7,3 @@ sqlalchemy
 pymysql
 pytest
 pytest-cov
-
