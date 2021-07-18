@@ -8,3 +8,4 @@ pymysql
 pytest
 pytest-cov
 Flask-Testing
+requests-mock
