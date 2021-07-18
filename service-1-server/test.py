@@ -1,5 +1,7 @@
+from flask import Flask
 from flask import url_for
 from flask_testing import TestCase
+import requests
 import requests_mock
 from app import app
 from unittest.mock import patch
