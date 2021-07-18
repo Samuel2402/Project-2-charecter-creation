@@ -37,7 +37,7 @@ def home():
     stats = requests.post('http://stats_api:5003/get_stats', data=character_class.text)
     points = requests.get('http://stats_api:5003/get_points')
     
-    last_five_characters =okay try running docker-compose --version Character.query.order_by(Character.id.desc()).limit(10).all()
+    last_five_characters = Character.query.order_by(Character.id.desc()).limit(10).all()
     db.session.add(
         Character(
             race=race.text,
