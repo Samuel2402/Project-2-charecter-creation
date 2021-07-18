@@ -26,7 +26,7 @@ pipeline{
                 }
             }
             stage('Deploy'){
-                steps{
+                steps{                            
                     sh "docker stack deploy --compose-file docker-compose.yaml stack-1"
                 }
             }
