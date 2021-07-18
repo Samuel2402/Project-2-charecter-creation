@@ -19,7 +19,7 @@ pipeline{
             }
             stage('Test'){
                 steps{
-                    sh "cd service-1-server && python -m pytest test.py"
+                    sh "cd service-1-server && python3 -m pytest test.py"
                     sh ". ./venv/bin/activate && cd service-2-race && python -m pytest test.py"
                     sh ". ./venv/bin/activate && cd service-3-class && python -m pytest test.py"
                     sh ". ./venv/bin/activate && cd service-4-stats && python -m pytest test.py"
