@@ -28,17 +28,17 @@ The project included the creation of an application, split into four services - 
 # Proposal
 To create the MVP within the specified time period, the idea specified to meet criteria is a Character Generator, with Routes to generate a characters Race, Class, Blessing, Stats and Points. These will be split into services 2, 3 and 4. Service 1 will compile information from service 2, 3 and 4, present it on HTML, uplaod character to db insance on Mysql, and Query the 10 most recent generated characters.
 
-![Trello board design](./Images/Trello.jpg)
-
 # Trello
 I began the project by listing out all tasks that i believed would need to be completed to meet the MVP - information for this was taken from QA Community to reduce the likelihood of missing an key element and was updated as the project progressed.
+
+![Trello board design](./Images/Trello.jpg)
 
 My trello board was updated as the project developed, however it is still only a simple trello board (utilises a few user stories and MoSCoW prioritisation stratagies). Trello functioned as to-do, doing, and done to clearly demonstrate the projects progress and was comprised of prodominatly crucial stages of operations.
 
 # Risk Assessment
 I created a Risk Assesment before beginning my project to highlight potential risks that i have identified. 
 
-![developed design](.Images/early-risk-management.jpg)
+![developed design](./Images/early-risk-management.jpg)
 
 I continued added columns as the project progressed and i found a potential issue, including potential risks related to github secrets, as-live testing and any issues with the project that could cause delays.
 Furthermoor risk was updated and whether or not an issue occured to-date.
