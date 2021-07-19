@@ -38,22 +38,26 @@ My trello board was updated as the project developed, however it is still only a
 # Risk Assessment
 I created a Risk Assesment before beginning my project to highlight potential risks that i have identified. 
 
-![developed design](./Images/early-risk-management.jpg)
+![developed design](./Images/Final Risk Management.jpg)
 
 I continued added columns as the project progressed and i found a potential issue, including potential risks related to github secrets, as-live testing and any issues with the project that could cause delays.
 Furthermoor risk was updated and whether or not an issue occured to-date.
+- I added tools that can be used to mitigate issues to the risk assesment. 
 
 # Entity Relationship Diagram
 my entity relationship diagram went through a few iterations as i worked out their relationship and what the contents of each table would be.
 
-![initial design](./images/first-erd.jpeg)
+![initial design](./Images/)
 
-my first ERD was basic, - few columns, incorrect information, lack of information and lacked relations
+Initial and final ED for table: 
 
-Develouped erds show more information on information types, column names, primary and foreign keys amonst other vital information.
-I have chosen to create a simplified version of my project with two tables to meet the MVP before constructing my third table
+![initial design](./Images/Tables.jpg)
 
-![initial design](./images/final-erd.jpeg)
+Initial scope for project:
+
+![initial design](./Images/Projet scope.jpeg)
+
+
 
 # Development
 The project began with building my tables in python and linking them with a db made in mysql. I created a VM and a MySQL Instance using Google Cloud Provider, Created my db in MySQL, added firewall exceptions, and added permissions for VM to access database. 
