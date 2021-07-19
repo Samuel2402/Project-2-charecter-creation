@@ -1,7 +1,5 @@
 # Projesct-2-charecter-creation
 
-# fundamental-project-1
-
 ## Contents
 * [Introduction](#introduction) 
 * [Proposal](#proposal)
