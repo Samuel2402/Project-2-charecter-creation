@@ -58,7 +58,11 @@ Project scope - all elements required for project completion and successfulll de
 
 ![Project scope](./Images/Projet-scope.jpeg)
 
-- Unfortunatly i was unable to complete the entirety of the project on time - leaving some elements unfinished or missing. My actual project scope ended up as:
+- Unfortunatly i was unable to complete the entirety of the project on time - leaving some elements unfinished or missing. I therfore ammended my goals for the project with new expecations:
+
+![ammended scope](Images/Working-Webhook.jpg)
+
+My actual project scope ended up as:
 
 ![Final scope completed](./Images/current.jpg)
 
@@ -104,10 +108,19 @@ Requires further testing before deployment including
 Due to issues with pytest (likely due to simplified file structure ) pytest coverage was unable to run throughout the project and requires mending and implementing before final deployment - However all tests made passed pytest successfully.
 
 ## CI Pipeline 
+Expected and Proposed CI Pipeline:
 
+![ci pipeline](./Images/ideal-ci-pipeline.jpg)
+
+However due to time constraints and various issues i was unable to complete all tasks leaving my current pipeline as shown below:
+
+![ci pipeline actual](./Images/Current-Pipeline.jpg)
 
 ## Jenkins
-Jenkins is being utilised to setup and deploy working versions of my app and is working in its current state.
+Jenkins is being utilised to setup and deploy working versions of my app and is working in its current state. 
+
+![jenkins](./Images/Jenkins-deploy.jpg)
+
 Script was added, with permissions changed to execute and run. After logging in successfully i created my build. Furthermore i had to edit my sudo visudo to add jenkins permissions before it would run successfully
 
 ![jenkins working](./images/jenkins1.jpg)
