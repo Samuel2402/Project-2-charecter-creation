@@ -86,6 +86,8 @@ After creating my tables i edited my create.py to populate the table with some e
 ## Creating Dockerfiles and Docker-compose.yaml
 Dockerfiles where made in each service (in directory with app.py) to form images and build services using docker-compose. a docker-compose.yaml was created in my PWD and written to deply all necessary services one for each api built (server, class_appi, race_api and stats_api). initioal app deplyment was run using docker-compose up -d --build to create images and deploy containers. Images where also linked to my dockerhub at this stage and pushed.
 
+![dockerhub](./Images/Dockerhub.jpg)
+
 ## Frontend
 A basic html homepage was costructed to allow access to the service. - will be updated in later versions of application (likely v1.3 to following 1.2 - current)
 
@@ -131,6 +133,8 @@ I have setup a webhook tha works with my current jenkins build, jenkins detects 
 
 ![working webhook](./Images/webhook.jpg)
 
+Further implementation of jenkins would see artifacts created and stored for more accurate testing and deployment. Can also trace back to previous artefacts if required. will be include in v1.3.
+
 ## Ansible
 Ansible has not yet been added to my current Ci Pipeline but will be added in v1.3 (to follow).
 Ansible will be used to download and install docker and docker-compose onto machines that require it using playbooks. Assisting the automative process of setting up pipelines. 
@@ -141,5 +145,5 @@ Nginx was originaly intended for use as a load balancer for my containers and VM
 # Bugs 
  - Webhook does not opperate correctly - v1.2
  - Jenkins deploy procese makes it part of the manager node - v1.2
- 
+
 
