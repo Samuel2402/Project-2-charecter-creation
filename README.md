@@ -19,6 +19,8 @@
 * [Testing](#testing) 
 * [CI Pipeline](#CI-Pipeline)
 * [Jenkins](#jenkins)
+* [Ansible](#Ansible)
+* [Nginx](#Nginx)
 * [Known bugs and planned updates](#bugs)
 
 
@@ -117,25 +119,27 @@ However due to time constraints and various issues i was unable to complete all 
 ![ci pipeline actual](./Images/Current-Pipeline.jpg)
 
 ## Jenkins
-Jenkins is being utilised to setup and deploy working versions of my app and is working in its current state. 
+Script was added, with permissions changed to execute and run. After logging in successfully i created my build. Furthermore i had to edit my sudo visudo to add jenkins permissions before it would run successfully
+
+Jenkins is being utilised to setup and build environments, test applications and deploy working versions of my app - It is working in its current state, however must be run as part of the swarm as i am unable to ssh into manager and connect to agent to run swarm/stack commands. this is not ideal for security and practical reasons. needs ammending in later version. 
 
 ![jenkins](./Images/Jenkins-deploy.jpg)
 
-Script was added, with permissions changed to execute and run. After logging in successfully i created my build. Furthermore i had to edit my sudo visudo to add jenkins permissions before it would run successfully
+My db instance set as a credential in jenkins and is inaccessable to everyone other than me currently.
 
-![jenkins working](./images/jenkins1.jpg)
+I have setup a webhook tha works with my current jenkins build, jenkins detects changes to main branch on my Github repository and automatically schedlas the build to run again, executing my script and performing a rolling update. (changes were made in recent version and although web hook tracks changes successfully, it will not implement changes correctly)
 
-My db instance is used in execute bash shell currently, however my build is behind a secure jenkins login so the risk of a leak is low. (execute line is ommited)
+![working webhook](./Images/webhook.jpg)
 
-![jenkins bash1 ](./images/jenkins2.jpg)
-![jenkins bash2 ](./images/jenkins3.jpg)
+## Ansible
+Ansible has not yet been added to my current Ci Pipeline but will be added in v1.3 (to follow).
+Ansible will be used to download and install docker and docker-compose onto machines that require it using playbooks. Assisting the automative process of setting up pipelines. 
 
-Jenkins requires further implementation of webhooks and architecture to save build versions as zip files.
+## Nginx
+Nginx was originaly intended for use as a load balancer for my containers and VM's however as time became limited its role changed and was to be run as an image in a container on a vm. It would have acted as a proxy to divert traffic. i was unable to implement in time for the first deliverable, will be included later in v1.3.
 
 # Bugs 
- - Information entered into decimal feilds is currently tempermental and needs refining
- - Inclusion of drop down Choices for selecting receipts
- - Stats table created and working 
- - Date not entering correctly (shows None)
+ - Webhook does not opperate correctly - v1.2
+ - Jenkins deploy procese makes it part of the manager node - v1.2
+ 
 
-(to be added as they are discovered)
