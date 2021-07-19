@@ -28,7 +28,7 @@ The project included the creation of an application, split into four services - 
 # Proposal
 To create the MVP within the specified time period, the idea specified to meet criteria is a Character Generator, with Routes to generate a characters Race, Class, Blessing, Stats and Points. These will be split into services 2, 3 and 4. Service 1 will compile information from service 2, 3 and 4, present it on HTML, uplaod character to db insance on Mysql, and Query the 10 most recent generated characters.
 
-![Trello board design](./images/trello-1.jpeg)
+![Trello board design](./images/new-final-trello.jpg)
 
 # Trello
 I began the project by listing out all tasks that i believed would need to be completed to meet the MVP - information for this was taken from QA Community to reduce the likelihood of missing an key element and was updated as the project progressed.
