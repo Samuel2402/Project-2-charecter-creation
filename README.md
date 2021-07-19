@@ -7,7 +7,7 @@
 * [Proposal](#proposal)
 * [Trello](#trello)
 * [Risk Assessment](#risk-assessment)
-* [Entity Relationship Diagram](#entity-relationship-diagram)
+* [Entity Diagrams](#entity-diagrams)
 * [Development](#development)
 * [Virtual Machine, GCP, File format](#Virtual-Machine,-GCP,-File-format)
 * [Gitignore](#Gitignore)
@@ -36,28 +36,21 @@ I began the project by listing out all tasks that i believed would need to be co
 My trello board was updated as the project developed, however it is still only a simple trello board (utilises a few user stories and MoSCoW prioritisation stratagies). Trello functioned as to-do, doing, and done to clearly demonstrate the projects progress and was comprised of prodominatly crucial stages of operations.
 
 # Risk Assessment
-I created a Risk Assesment before beginning my project to highlight potential risks that i have identified. 
+I created a Risk Assesment before beginning my project to highlight potential risks that i have identified.
 
-![developed design](./Images/Final Risk Management.jpg)
+![developed design](./Images/early-risk-management.jpg)
 
-I continued added columns as the project progressed and i found a potential issue, including potential risks related to github secrets, as-live testing and any issues with the project that could cause delays.
-Furthermoor risk was updated and whether or not an issue occured to-date.
-- I added tools that can be used to mitigate issues to the risk assesment. 
+I continued adding columns as the project progressed and i found a potential issue, including potential risks related to github secrets, docker secrets, as-live testing and any issues with the project that could cause delays.
+Furthermore risk was updated and whether or not an issue occured to-date.
 
-# Entity Relationship Diagram
-my entity relationship diagram went through a few iterations as i worked out their relationship and what the contents of each table would be.
+# Entity Diagrams
+My entity diagram - shows how my services will link and operate. Details how the DB is attached to the servise:
 
-![initial design](./Images/)
+![initial design](./Images/project-layout.jpg)
 
-Initial and final ED for table: 
+My table ED - dictates original idea and final table format:
 
-![initial design](./Images/Tables.jpg)
-
-Initial scope for project:
-
-![initial design](./Images/Projet scope.jpeg)
-
-
+![initial and current design](./Images/Tables.jpg)
 
 # Development
 The project began with building my tables in python and linking them with a db made in mysql. I created a VM and a MySQL Instance using Google Cloud Provider, Created my db in MySQL, added firewall exceptions, and added permissions for VM to access database. 
